@@ -31,15 +31,26 @@ fun Note() {
                 Color.White, backgroundShape
             )
     ) {
-        NoteColor(modifier = Modifier.align(Alignment.CenterVertically), color = green, size = 40.dp, padding = 4.dp, border = 1.dp)
-        Column(modifier = Modifier.weight(1f)) {
+        NoteColor(
+            modifier = Modifier
+                .align(Alignment.CenterVertically)
+                .padding(start = 16.dp, end = 16.dp),
+            color = green,
+            size = 40.dp,
+            border = 1.dp
+        )
+        Column(modifier = Modifier
+            .weight(1f)
+            .align(Alignment.CenterVertically)) {
             Text(text = "Title", maxLines = 1)
             Text(text = "Content", maxLines = 1)
         }
         Checkbox(
             checked = false,
             onCheckedChange = {},
-            modifier = Modifier.padding(start = 8.dp)
+            modifier = Modifier
+                .padding(16.dp)
+                .align(Alignment.CenterVertically)
         )
     }
 }
