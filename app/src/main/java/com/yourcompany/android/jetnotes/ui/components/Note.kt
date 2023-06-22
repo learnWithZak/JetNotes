@@ -17,6 +17,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yourcompany.android.jetnotes.theme.green
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun Note() {
@@ -39,11 +42,31 @@ fun Note() {
             size = 40.dp,
             border = 1.dp
         )
-        Column(modifier = Modifier
-            .weight(1f)
-            .align(Alignment.CenterVertically)) {
-            Text(text = "Title", maxLines = 1)
-            Text(text = "Content", maxLines = 1)
+        Column(
+            modifier = Modifier
+                .weight(1f)
+                .align(Alignment.CenterVertically)
+        ) {
+            Text(
+                text = "Title",
+                color = Color.Black,
+                maxLines = 1,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 16.sp,
+                    letterSpacing = 0.15.sp
+                )
+            )
+            Text(
+                text = "Content",
+                color = Color.Black.copy(alpha = 0.75f),
+                maxLines = 1,
+                style = TextStyle(
+                    fontWeight = FontWeight.Normal,
+                    fontSize = 14.sp,
+                    letterSpacing = 0.25.sp
+                )
+            )
         }
         Checkbox(
             checked = false,
