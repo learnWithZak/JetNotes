@@ -10,6 +10,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Checkbox
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
@@ -30,7 +31,7 @@ fun Note() {
                 Color.White, backgroundShape
             )
     ) {
-        NoteColor(color = green, size = 40.dp, padding = 4.dp, border = 1.dp)
+        NoteColor(modifier = Modifier.align(Alignment.CenterVertically), color = green, size = 40.dp, padding = 4.dp, border = 1.dp)
         Column(modifier = Modifier.weight(1f)) {
             Text(text = "Title", maxLines = 1)
             Text(text = "Content", maxLines = 1)
